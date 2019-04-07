@@ -9,9 +9,9 @@
 ## 3、编辑privoxy下的conf文件 ##
     root@kali:~# vi /etc/privoxy/config
 查看privoxy监听的端口，一般是8118，如图所示 ：  
-![](H:\git\Security_picture\监听端口.jpg)  
+![](https://github.com/NuLiDeXiaoBai/Security/blob/master/Kali/images/%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3.jpg)  
 然后启用socks5转发，如图所示：  
-![](H:\git\Security_picture\启用socks5.png)  
+![](https://github.com/NuLiDeXiaoBai/Security/blob/master/Kali/images/%E5%90%AF%E7%94%A8socks5.png)  
 ## 4、配置shadowsocks的json文件 ##
 修改json中的服务器端的配置：
 
@@ -21,7 +21,7 @@
   
     root@kali:/etc/shadowsocks# vi US.json
 修改信息如图所示：  
-![](H:\git\Security_picture\USJson修改信息.png)  
+![](https://github.com/NuLiDeXiaoBai/Security/blob/master/Kali/images/USJson%E4%BF%AE%E6%94%B9%E4%BF%A1%E6%81%AF.png)  
 ## 5、启动privoxy服务 ##    
     root@kali:/etc/shadowsocks# service privoxy start
 
@@ -30,17 +30,17 @@
 
 ## 7、验证 ##
 打开firefox，在VPN中设置如下：  
-![](H:\git\Security_picture\firefox.png)  
+![](https://github.com/NuLiDeXiaoBai/Security/blob/master/Kali/images/firefox.png)  
 
 打开油瓶网验证一下  
-![](H:\git\Security_picture\youtube.png)
+![](https://github.com/NuLiDeXiaoBai/Security/blob/master/Kali/images/youtube.png)
 
 OK，完毕！
 但其实到这不能说完全完毕，因为当你在kali中使用其他的软件需要翻墙时，需要provixychains来进行代理，所以接下来我们继续配置provixychains
 
 ## 8、设置proxychain.conf文件##
     root@kali:vi /etc/proxychain.conf
-![](H:\git\Security_picture\proxychains.png)
+![](https://github.com/NuLiDeXiaoBai/Security/blob/master/Kali/images/proxychains.png)
 
 ## 9、再次验证 ##
 通过proxyresolv对谷歌网站进行解析验证，但是由于proxyresolv默认实在proxychains3中，所以我们需要将他移到/usr/bin中
@@ -52,8 +52,8 @@ OK，完毕！
 
     root@kali:/etc/shadowsocks# sslocal -c US.json -d start
 解析验证  
-![](H:\git\Security_picture\jiexi.png)  
-![](H:\git\Security_picture\daili.png)  
+![](https://github.com/NuLiDeXiaoBai/Security/blob/master/Kali/images/jiexi.png)  
+![](https://github.com/NuLiDeXiaoBai/Security/blob/master/Kali/images/daili.png)  
 
 完成，大功告成！
 
